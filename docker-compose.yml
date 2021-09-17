@@ -1,0 +1,17 @@
+version: '3.3'
+
+services: 
+  db:
+    image: mysql/mysql-server
+    environment: 
+      MYSQL_DATABASE: 'imbd_goroutine_concurency'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'user'
+      MYSQL_ROOT_PASSWORD: '123456'
+    ports: 
+      - '3306:3306'
+    volumes: 
+      - mysql_data:/data
+
+volumes: 
+  mysql_data:
